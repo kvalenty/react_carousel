@@ -1,17 +1,28 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
+import { CarouselList } from './CarouselList/CarouselList';
 
-const Carousel = () => (
-  <div className="Carousel">
-    <ul className="Carousel__list">
-      <li><img src="./img/1.png" alt="1" /></li>
-      <li><img src="./img/1.png" alt="2" /></li>
-      <li><img src="./img/1.png" alt="3" /></li>
-      <li><img src="./img/1.png" alt="4" /></li>
-    </ul>
+export class Carousel extends React.Component {
+  state = {
+    ...this.props,
+    currentSlide: 0,
+  };
 
-    <button type="button">Prev</button>
-    <button type="button">Next</button>
-  </div>
-);
+  render() {
+    return (
+      <div className="Carousel">
+        <CarouselList
+          images={this.state.images}
+          currentSlide={this.state.currentSlide}
+          frameSize={this.state.frameSize}
+          itemWidth={this.state.itemWidth}
+          animationDuration={this.state.animationDuration}
+        />
+      </div>
+    );
+  }
+}
 
-export default Carousel;
+// Carousel.propTypes = {
+//   images: PropTypes.arrayOf(PropTypes.string).isRequired,
+// };

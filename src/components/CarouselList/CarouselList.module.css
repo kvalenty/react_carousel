@@ -1,0 +1,16 @@
+.carouselWrapper {
+  width: 1300px;
+  background-color: darkgray;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* align-items: s; */
+  /* justify-content: center; */
+}
+
+.CarouselList {
+  list-style: none;
+  padding: 0;
+  transition: transform 0.3s;
+  position: relative;
+}
